@@ -11,9 +11,7 @@ const io = new Server(server);
 app.use(express.static(__dirname));
 
 app.get("/", (req, res) => {
-    res.sendFile(
-        path.join(__dirname, "Pingus in the Table (1).html")
-    );
+    res.sendFile(path.join(__dirname, "index.html"));
 });
 
 io.on("connection", (socket) => {
@@ -34,6 +32,7 @@ io.on("connection", (socket) => {
 });
 
 const PORT = process.env.PORT || 3000;
+
 server.listen(PORT, "0.0.0.0", () => {
-    console.log("Pingus multiplayer activo en puerto " + PORT);
+    console.log("Pingus activo en puerto " + PORT);
 });
